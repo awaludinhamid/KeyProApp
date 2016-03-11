@@ -1,0 +1,204 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 8, 2015, 10:38:03 AM
+    Author     : awal
+*/
+
+.kp-title {
+  position: fixed;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+  background-color: white;
+  z-index: 50;
+}
+.kp-title .mirror {
+  opacity: 0.2;
+  height: 15px;
+  background: linear-gradient(black, #bbb);
+  transform: rotateX(180deg);
+  animation-name: text-blink;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes text-blink {
+  0% {opacity: 0.3;}
+  50% {opacity: 0.01;}
+  100% {opacity: 0.3;}
+}
+
+.loading-anime {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  opacity: 0.8;
+  z-index: 500;
+}
+.loading-anime img {
+  width: 300px;
+  height: 300px;
+  margin-top: 10%;
+  animation-name: img-blink;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+@keyframes img-blink {
+  0% {opacity: 0.1;}
+  50% {opacity: 1;}
+  100% {opacity: 0.1;}
+}
+
+.left-back-pos {
+  background-color: #4086B6;
+}
+.left-front-pos {
+  position: relative;
+  top: 95px;
+}
+.right-back-pos {
+  right: 0px;
+  background-color: #4086B6;
+}
+.right-front-pos {
+  position: relative;
+  top: 95px;
+}
+.center-back-pos {
+  background-color: lightsteelblue;
+  width: 100%;
+}
+.center-front-pos {
+  position: relative;
+  top: 95px;
+}
+.back-def-style {
+  position: fixed;
+  height: 100%;
+  opacity: 0.4;
+  z-index: -1;
+}
+.menu-back-pos, .menu-front-pos {
+  position: fixed;
+  top: 50px;  
+  height: 40px;
+  width: 100%;
+}
+.menu-front-pos {
+  box-shadow: #444 2px 2px 2px;
+  z-index: 7;
+}
+.menu-back-pos {
+  background-color: #ccc;
+  z-index: 5;
+}
+.menu-anime {
+  position: fixed;
+  top: 37px;  
+  height: 14px;
+  width: 14px;
+  border-radius: 7px;
+  opacity: 0.2;
+  background: linear-gradient(black, #ddd);
+  z-index: 60;  
+  animation-name: back-blink;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; 
+}
+@keyframes back-blink {
+  0% {transform: translate(0px) rotate(0deg);}
+  10% {opacity: 0}
+  20% {opacity: 0.2}
+  30% {opacity: 0}
+  40% {opacity: 0.2}
+  50% {opacity: 0}
+  60% {opacity: 0.2}
+  70% {opacity: 0}
+  80% {opacity: 0.2}
+  90% {opacity: 0}
+  100% {opacity: 0.2; transform: translate(1400px) rotate(4320deg);}
+}
+
+.table thead tr th {
+  background-color: #37b;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+}
+.table tbody tr td {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.menu-front-pos ul {
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+div#logUser {
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  color: #559;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #559;
+  z-index: 60;
+}
+div#otherMenu {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: white;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #559;
+}
+
+
+/* blue pill (inspired by iTunes)
+*******************************************************************************/
+button.blue-pill {
+  background: linear-gradient(0deg, black, #ddd);
+  border-top: 1px solid #aaa;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid black;
+  border-left: 1px solid #999;
+  border-radius: 18px;
+  box-shadow: white 3px 3px 3px;
+  color: #fff;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 8px 0;
+  text-align: center;
+  text-shadow: 0 -2px 2px black;
+  text-transform: uppercase;
+  width: 150px;
+}
+button.blue-pill:hover {
+  background: linear-gradient(0deg, #444, #fff);
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #444;
+  border-left: 1px solid #bbb;
+  box-shadow: none;
+  transition: transform 300ms;
+  transform: translate(2px,2px);
+}
+button.blue-pill:active {
+}
+button.font-color {
+  color: #ee8;
+}
+button.font-color:hover {
+  color: white;
+}

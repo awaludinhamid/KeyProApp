@@ -1,0 +1,120 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 16, 2015, 9:24:59 AM
+    Author     : awal
+*/
+
+div#body {
+  position: relative;
+  left: 80px;
+  display: none;
+  z-index: 0;
+}
+.node circle {
+  fill: darkgrey;
+}
+.node text {
+  font-size: 12px;
+}
+.node rect {
+  fill: lightgrey;
+  fill-opacity: 0.5;
+}
+path.link {
+  fill: none;
+  stroke: lightblue;
+  stroke-width: 1.5px;
+}
+
+ul>li>span.btn {
+  width: 100%;
+  word-spacing: -8px;
+  text-align: left;
+}
+ul>li>label.btn {
+  width: 100%;
+  text-align: left;
+}
+ul>li[id*=select]:not([id=selectkpi])>span {
+  cursor: default;
+}
+
+div#data {
+  margin-top: 10px;
+}
+div#kpi-option>ul>li>span {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-shadow: black 2px 2px 1px;
+}
+div#kpi-option>ul>li:not(#selectkpi)>span {
+  color: #eff;
+  cursor: pointer;
+}
+div#kpi-option>ul>li:not(#selectkpi):hover {
+  background-color: #eef;
+}
+div#data div:not(#pagination), div#addition-option, div#job div:not(#pagination-progress) {
+  width: auto;
+  overflow-x: auto;
+}
+
+.table, div#kpi-option, div#main-option ul, div#addition-option ul, div.right-front-pos ul {
+  box-shadow: #777 4px 4px 2px;  
+}
+div#kpi-option:hover, div#main-option ul:hover, div.right-front-pos ul:hover {
+  transition: transform 300ms;
+  transform: translate(4px,4px);
+  box-shadow: none;
+}
+div#addition-option ul:hover {
+  box-shadow: white 0px 0px 10px 10px;
+}
+
+.modal-header {
+  color: white;
+  background-color: #37b;
+}
+.modal-footer {
+  background-color: #ddd;
+}
+
+table#search-table>tbody>tr>td {
+  padding: 0px;
+  font-size: 10px;
+}
+div#search-list ul, div#search-list p{
+   font-size: 10px;
+   padding: 0px;
+   margin: 0px;
+}
+div#search-list ul label, div#search-list ul input {
+  margin: 0px;
+}
+
+div#mdl-show-progress div.modal-dialog {
+  width: 870px;
+}
+
+div#right-title {
+  padding: 5px;
+  color: white;
+  background: #444;
+  font-size: 12px;
+  opacity: 0.8;
+  border-radius: 5px;
+  border: red solid 2px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 767px) {
+  .left-back-pos,
+  .right-back-pos {
+    background: none;
+  }
+}

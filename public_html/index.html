@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="jQuery/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/application.css"/>
+    <script src="jQuery/js/jquery.min.js"></script>
+    <script src="jQuery/js/jquery-ui.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="angular/angular.min.js"></script>
+    <script src="js/globalfunc.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/json_data1.js"></script>
+    <script src="js/json_data2min.js"></script>
+    <!--script src="js/json_data3.js"></script>
+    <script src="js/json_data4.js"></script>
+    <script src="js/json_data5.js"></script-->
+    <title>KEYPRO Application</title>
+  </head>
+  <body ng-app="dataApp" ng-controller="dataCtrl">
+    <div class="kp-title">
+      <div>Data Loading and Inquiry</div>
+      <div class="mirror">Data Loading and Inquiry</div>
+      <div id="otherMenu">
+        <span>Powered by SafaSoft<sup>&trade;</sup></span>
+      </div>
+    </div>
+    <div class="loading-anime" hidden>
+      <img src="img/logo-jempol.png" alt="Currently"/><br/>
+      <span>Loading..</span>
+    </div>
+    <div class="menu-anime"></div>
+    <div class="menu-back-pos"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="btn-menu" class="menu-front-pos" hidden>
+          <ul class="list-inline">
+            <li><button id="btn-proceed" class="blue-pill font-color"><span class="glyphicon glyphicon-check"></span>&nbsp;PROCEED</button></li>
+            <li><button id="btn-download" class="blue-pill" disabled title="Currently not available" style="cursor: not-allowed"><span class="glyphicon glyphicon-file"></span>&nbsp;Create File</button></li>
+            <li><button id="btn-progress" class="blue-pill" disabled title="Currently not available" style="cursor: not-allowed"><span class="glyphicon-hourglass"></span>&nbsp;Show Progress</button></li>        
+          </ul>
+        </div>
+      </div>
+      <div class="row"> 
+        <div class="left-back-pos back-def-style col-sm-3 col-md-2"></div>
+        <div class="center-back-pos back-def-style col-sm-6 col-md-8"></div>
+        <div class="right-back-pos back-def-style col-sm-3 col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="left-front-pos col-sm-3 col-md-2">
+          <div id="kpi-option">
+            <ul class="list-unstyled">
+              <li id="selectkpi"><span></span></li>
+              <li id="main-kpi" title="Currently not available" style="cursor: not-allowed"><span class="glyphicon glyphicon-triangle-left" style="cursor: not-allowed"></span><span style="cursor: not-allowed">&nbsp;Main Tree</span></li>
+              <li id="det-kpi" title="Currently not available" style="cursor: not-allowed"><span class="glyphicon glyphicon-triangle-left" style="cursor: not-allowed"></span><span style="cursor: not-allowed">&nbsp;Detail Tree</span></li>
+            </ul>
+          </div>
+          <div id="main-option"></div>  
+          <div id="right-title">
+            <ul class="list-unstyled">
+              <li>Usage:</li>
+              <li>Push <b>Proceed</b> button every time you change the options.</li>
+              <li>Select <b>Main Options</b> (Company, Business Unit And Platform) to accept different data.</li>
+              <li><b>Secondary Options</b> (Branch, Pos) are available to review also but currently not affected data.</li>
+              <li>Select/deselect <b>Columns Options</b> to restrict columns you want to displayed.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="center-front-pos col-sm-6 col-md-8">
+          <div id="addition-option">
+            <table>
+              <tr style="vertical-align: top"></tr>
+            </table>
+          </div>
+          <div id="data">
+            <div>
+              <table id="data-table" class="table table-bordered table-condensed table-hover">
+                <thead>
+                  <tr>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="dat in dataList" data-id="{{dat.id}}">
+                    <td>{{dat.col1}}</td>
+                    <td>{{dat.col2}}</td>
+                    <td>{{dat.col3}}</td>
+                    <td>{{dat.col4}}</td>
+                    <td>{{dat.col5}}</td>
+                    <td>{{dat.col6}}</td>
+                    <td>{{dat.col7}}</td>
+                    <td>{{dat.col8}}</td>
+                    <td>{{dat.col9}}</td>
+                    <td>{{dat.col10}}</td>
+                    <td>{{dat.col11}}</td>
+                    <td>{{dat.col12}}</td>
+                    <td>{{dat.col13}}</td>
+                    <td>{{dat.col14}}</td>
+                    <td>{{dat.col15}}</td>
+                    <td>{{dat.col16}}</td>
+                    <td>{{dat.col17}}</td>
+                    <td>{{dat.col18}}</td>
+                    <td>{{dat.col19}}</td>
+                    <td>{{dat.col20}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="pagination" style="text-align: center">
+              <ul class="pagination"></ul>
+            </div>
+          </div>
+        </div>
+        <div class="right-front-pos col-sm-3 col-md-2">
+          <ul class="list-unstyled" id="column">
+            <li id="selectcolumn">
+              <span id="spanselectcolumn" class="btn btn-primary btn-sm glyphicon glyphicon-tag">&nbsp;&nbsp;Columns
+                <label style="position: absolute; right: 10px">
+                  <input id="allcolumn" type="checkbox" value="allcol"/>&nbsp;All
+                </label>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="mdl-search-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">
+              <span><span class='glyphicon glyphicon-search'></span>&nbsp;Pick Option from List</span>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <div> 
+              <table id="search-table" style="height: 400px">
+                <thead>
+                  <tr style="height: 20px">
+                    <th>Searching List</th>
+                    <th></th>
+                    <th>Selected List</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="margin: 5px">
+                    <td style="vertical-align: top; border: lightgrey solid 1px;; width: 46%">
+                      <div id="search-list">
+                        <p>
+                          <label>TYPE NAME TO FIND:&nbsp;
+                            <input id="search-text" placeholder="ENTER to execute" title="ENTER to execute" ng-model="searchText">
+                          </label><br/>
+                          <label id="find-select-all" style="float: right; display: none"><input type="checkbox">&nbsp;Select All</label>
+                        </p>
+                        <ul ng-repeat="dat in dataFindList" id="data-list-find" class="list-unstyled">
+                          <li>
+                            <label style="margin: 0px"><input id="{{dat.code}}" type="checkbox" style="margin: 0px">&nbsp;{{dat.name}}</label>
+                          </li>
+                        </ul>
+                        <p style="text-align: right; font-weight: bold; vertical-align: bottom">
+                          <span id="prevPageFind">PREVIOUS</span>
+                          <span>&nbsp;&VerticalSeparator;&nbsp;</span>
+                          <span id="nextPageFind">NEXT</span>
+                        </p>
+                      </div>
+                    </td>
+                    <td>
+                      <ul class="list-unstyled" style="text-align: center">
+                        <li><button id="btn-switch-right" class="btn btn-primary btn-sm glyphicon glyphicon-triangle-right"></button></li>
+                        <li><hr/></li>
+                        <li><button id="btn-switch-left" class="btn btn-danger btn-sm glyphicon glyphicon-triangle-left"></button></li>
+                      </ul>
+                    </td>
+                    <td style="vertical-align: top; border: lightgrey solid 1px; width: 46%">
+                      <label id="selected-select-all" style="float: right; display: none"><input type="checkbox">&nbsp;Select All</label>
+                      <ul class="list-unstyled" id="selected-list"></ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button id="btn-ok" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="mdl-message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">
+              <span></span>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <span></span>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
